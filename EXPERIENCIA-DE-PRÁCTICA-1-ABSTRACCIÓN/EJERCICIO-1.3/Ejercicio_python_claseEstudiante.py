@@ -19,11 +19,11 @@ class Estudiante:
 
     # Método para tomar exámenes al estudiante
     def tomar_examen(self, curso):
-        print(self.nombre + " está tomando el examen de " + curso)
+        print(self.nombre + " dando examen " + curso)
 
     # Método para calificar al estudiante
     def calificar(self, curso, nota):
-        print("Se ha calificado a " + self.nombre + " en la curs de " + curso + " con una nota de " + str(nota))
+        print("Estudiante" + self.nombre + " en la curso de " + curso + " su nota es " + str(nota))
 
 
 # b) ¿Cómo se pueden crear diferentes objetos para representar diferentes estudiantes?
