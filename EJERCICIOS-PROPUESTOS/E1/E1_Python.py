@@ -1,13 +1,11 @@
-import random
-
 # Clase Auto: Representa un auto con atributos como la velocidad y el nombre del conductor.
 class Auto:
     def __init__(self, nombre, velocidad):
         self.nombre = nombre
         self.velocidad = velocidad
 
-    def acelerar(self):
-        self.velocidad += random.randint(1, 5)  # Aumentar la velocidad de forma aleatoria
+    def acelerar(self, incremento):
+        self.velocidad += incremento  # Aumentar la velocidad
 
 # Clase Carrera: Representa una carrera con atributos como la distancia total y la dificultad del oponente.
 class Carrera:
@@ -15,10 +13,10 @@ class Carrera:
         self.distancia_total = distancia_total
         self.dificultad_oponente = dificultad_oponente
 
-    def simular_carrera(self, jugador, computadora):
+    def simular_carrera(self, jugador, computadora, incremento_velocidad):
         while jugador.velocidad < self.distancia_total and computadora.velocidad < self.distancia_total:
-            jugador.acelerar()
-            computadora.acelerar()
+            jugador.acelerar(incremento_velocidad)
+            computadora.acelerar(incremento_velocidad)
 
         if jugador.velocidad >= self.distancia_total and computadora.velocidad >= self.distancia_total:
             print("¡Es un empate!")
@@ -34,4 +32,6 @@ computadora = Auto("Computadora", 0)
 
 carrera = Carrera(100, "Difícil")
 
-carrera.simular_carrera(jugador, computadora)
+incremento_velocidad = 5  # Se incrementa la velocidad en 5 en cada paso
+
+carrera.simular_carrera(jugador, computadora, incremento_velocidad)
